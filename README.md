@@ -136,6 +136,12 @@ This repository only hosts release files; the source code is private.
   安全：插件只可連接 manifest 內列明的網站，運行前會列出權限並須同意，亦無法存取其他檔案或執行程式。
 - **Add to sidebar**: a plugin gets its own sidebar item and runs whenever MultiTool is open. Plugins follow the light / dark theme and can be exported / imported as `.mtplugin` files.
   **加到工具欄**：插件在左側工具欄有自己的一格，開啟 MultiTool 時便會運行。插件會跟隨日光／深色主題，並可匯出／匯入為 `.mtplugin` 檔。
+- **New ▾** offers **New tool** (a page of its own, as above), **New plugin** and **Import**.
+  **新增 ▾** 可選擇**新工具**（有自己的介面，即上述的工具）、**新插件**及**匯入**。
+- **Plugins** (`"type": "mod"`) have no page of their own: `mod.js` runs in the background and changes how MultiTool itself looks — **themes** with `mt.app.addTheme` (all colours, a background image across the whole window, a font file, card transparency; e.g. an anime theme), plus the sidebar, title bar, home page and settings page with `mt.ui.*` (override text, colours, fonts, sizes or images, hide elements, add buttons / pictures / HTML panels, listen for clicks or page changes). Elements are picked with CSS-like selectors (`@sidebar Label[key="多功能工具"]`); **🔍 Pick element** copies the selector of whatever you Ctrl + click. Existing tools' pages and windows can't be changed — write a new tool for new features.
+  **插件**（`"type": "mod"`）沒有自己的介面：`mod.js` 在背景運行，修改 MultiTool 本身的外觀——以 `mt.app.addTheme` 加入**主題**（全部顏色、鋪滿整個視窗的背景圖、字型檔、卡片透明度，例如動漫主題），以及用 `mt.ui.*` 修改側欄、標題列、首頁及設定頁（override 文字、顏色、字型、大小或圖片、隱藏元件、加入按鈕／圖片／HTML 面板，以及監聽點擊或切換頁面）。元件以類似 CSS 的 selector 選擇（`@sidebar Label[key="多功能工具"]`）；**🔍 選擇元件**會複製你 Ctrl + 按下的元件的 selector。現有工具的頁面及視窗不可修改——如需新功能，請編寫新工具。
+- Plugin themes appear in the **Theme** menu at the bottom left of the sidebar (Light / Dark / plugin themes); choosing one restarts MultiTool. `mt.ui` changes are restored as soon as a plugin is turned off or reloaded, and also apply to elements created later. When several plugins change the same thing, the later one in the Workshop order wins (↑ / ↓ to reorder). Plugins must be turned on (**⏻ Turn on**) and need the "change MultiTool's look" permission; password boxes can't be read or changed.
+  插件主題會出現在左側欄底部的**主題**選單（日光／夜間／插件主題），選擇後會重新啟動。`mt.ui` 的修改在插件停用或重新載入時會即時還原，之後才建立的元件亦會自動套用。多個插件修改同一樣東西時，按工作坊的次序，排後面的會蓋過前面的（可按 ↑／↓ 調整）。插件須**⏻ 啟用**並同意「修改 MultiTool 的外觀」權限；密碼欄不能讀取或修改。
 
 **Screen Recorder 螢幕錄影** — install it from the Tool library / 於工具庫安裝
 
@@ -313,6 +319,8 @@ This repository only hosts release files; the source code is private.
   **網上搜尋**：Claude、ChatGPT 及 Gemini 可上網搜尋新聞、天氣、價格等最新資料。
 - **Folder per chat**: connect a folder to a chat and the AI can write, run and debug code, and create / edit / delete files inside that folder. Without a folder the AI can only chat and cannot run commands or modify your files.
   **每個對話可連接資料夾**：連接後，AI 可於該資料夾內編寫、執行及除錯程式，並建立／修改／刪除檔案。未連接資料夾時，AI 只可對話，不能執行指令或修改你的檔案。
+- **Attachments**: send images and documents (PDF, Word, Excel, PowerPoint, text and code files) together with your message — click 📎, drag files in, or paste a screenshot with Ctrl+V (up to 10 files, 30 MB each). Also works in the script, game server and Workshop AI helpers. Word / Excel / PowerPoint text is extracted so every AI can read it; the local AI can read text files but not images.
+  **附件**：可連同訊息一併傳送圖片及文件（PDF、Word、Excel、PowerPoint、文字及程式碼檔）——按 📎、把檔案拖入，或按 Ctrl+V 貼上截圖（最多 10 個，每個 30 MB）。腳本、遊戲伺服器及工作坊的 AI 助手亦適用。Word／Excel／PowerPoint 會另外抽出文字，令每個 AI 都讀得到；本地 AI 可讀文字檔，但無法查看圖片。
 
 **Voice chat 語音對話** — set up under **AI Assistant → Voice settings** / 於「AI 助手 → 語音設定」設定
 
@@ -326,6 +334,18 @@ This repository only hosts release files; the source code is private.
 ---
 
 ## Changelog 更新紀錄
+
+### v0.2.6
+- **New: Workshop plugins** — "+ New ▾" now offers New tool / New plugin / Import. Plugins change how MultiTool itself looks: themes (all colours, a background image across the window, a font, card transparency), plus the sidebar, title bar, home and settings pages. Existing tools can't be changed; the app name and version number are protected.
+  **新增：工作坊插件**——「+ 新增 ▾」可選新工具／新插件／匯入。插件可修改 MultiTool 本身的外觀：主題（全部顏色、鋪滿視窗的背景圖、字型、卡片透明度），以及側欄、標題列、首頁及設定頁。現有工具不可修改，程式名稱及版本號亦受保護。
+- **New: Theme menu** — the bottom-left theme switch is now a menu with Light, Dark and themes added by plugins.
+  **新增：主題選單**——左下角改為主題選單，可選日光、夜間及插件加入的主題。
+- **New: AI attachments** — send images and documents (PDF, Word, Excel, PowerPoint, text) together with your message in AI Assistant and the AI helpers (📎, drag and drop, or Ctrl+V).
+  **新增：AI 附件**——AI 助手及各 AI 幫手可連同訊息傳送圖片及文件（PDF、Word、Excel、PowerPoint、文字檔）（📎、拖放或 Ctrl+V）。
+- **New: Video Editor** — the timeline zooms out much further, with 1 / 2 / 5 / 10-minute marks.
+  **新增：影片剪輯**——時間軸可縮得更小，刻度可達 1／2／5／10 分鐘。
+- **Changed: Auto update** — the new version now replaces the old one by itself instead of through PowerShell, which should cause fewer antivirus false alarms.
+  **變更：自動更新**——改由新版自行替換舊版，不再經 PowerShell，減少被防毒軟件誤報。
 
 ### v0.252
 - **Changed: Version numbers** — the version number now uses the 0.xxx format (this release follows v2.5.2); auto update is not affected.
