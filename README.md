@@ -1,6 +1,6 @@
-<p align="center"><img src="https://raw.githubusercontent.com/jeffpny1123/MultiTool-Releases/main/icon.png" width="128" alt="MultiTool icon"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jeffpny1123/MultiTool-Releases/main/icon.png" width="128" alt="Rabi Toolkit icon"></p>
 
-# MultiTool 多功能工具
+# Rabi Toolkit 拉比工具箱
 
 A lightweight Windows automation tool (.NET 9 WinForms, single-file `.exe`). Build your own macros with keyboard and mouse actions, on-screen image matching, loops, conditions and background execution, and chat with your own AI (Claude / ChatGPT / Gemini, or a free local AI) by text or voice to answer questions, open apps and websites, or write scripts for you.
 
@@ -15,18 +15,21 @@ Interface languages / 介面語言：Traditional Chinese, Simplified Chinese, En
 
 👉 **[Latest release 最新版本](https://github.com/jeffpny1123/MultiTool-Releases/releases/latest)**
 
-1. Download `MultiTool-vX.X.zip` and extract it.
-   下載 `MultiTool-vX.X.zip` 並解壓。
-2. Run `MultiTool.exe` — no installation or .NET needed.
-   直接執行 `MultiTool.exe`，無須安裝，亦無須 .NET。
-3. MultiTool updates itself automatically when a new version is released here.
-   有新版本時，MultiTool 會自動更新。
+1. Download `RabiToolkit-vX.X.zip` and extract it.
+   下載 `RabiToolkit-vX.X.zip` 並解壓。
+2. Run `RabiToolkit.exe` — no installation or .NET needed.
+   直接執行 `RabiToolkit.exe`，無須安裝，亦無須 .NET。
+3. Rabi Toolkit updates itself automatically when a new version is released here.
+   有新版本時，Rabi Toolkit 會自動更新。
 
-Keep `MultiTool.exe` and the `data` folder together — your scripts, screenshots and settings are stored in `data`.
-`MultiTool.exe` 須與 `data` 資料夾放在一起，你的腳本、截圖及設定都儲存在 `data` 內。
+Optional free Workshop plugins (`video-download.mtplugin`, `stocks.mtplugin`) are attached to each release: open **Workshop → + New ▾ → Import** to add them.
+每個版本亦附上免費工作坊插件（`video-download.mtplugin`、`stocks.mtplugin`），可於**工作坊 → + 新增 ▾ → 匯入**加入。
 
-> If the target program (e.g. a game) runs as Administrator, run MultiTool as Administrator as well; otherwise Windows will block the simulated input.
-> 若目標程式（例如遊戲）以系統管理員身分執行，MultiTool 亦須以系統管理員身分執行，否則 Windows 會阻擋模擬輸入。
+Keep `RabiToolkit.exe` and the `data` folder together — your scripts, screenshots and settings are stored in `data`.
+`RabiToolkit.exe` 須與 `data` 資料夾放在一起，你的腳本、截圖及設定都儲存在 `data` 內。
+
+> If the target program (e.g. a game) runs as Administrator, run Rabi Toolkit as Administrator as well; otherwise Windows will block the simulated input.
+> 若目標程式（例如遊戲）以系統管理員身分執行，Rabi Toolkit 亦須以系統管理員身分執行，否則 Windows 會阻擋模擬輸入。
 
 This repository only hosts release files; the source code is private.
 此 repo 只用作發佈檔案，原始碼並不公開。
@@ -66,8 +69,8 @@ This repository only hosts release files; the source code is private.
   **前景執行**（預設）使用真實滑鼠及鍵盤；已選擇目標視窗時，會先切換至該視窗再開始。同一時間只可運行一個前景腳本。
 - **Background mode** captures, clicks, drags and types only inside the target window, even when it is covered by other windows. Some games (e.g. many DirectX games) do not accept background input; the window must not be minimized.
   **背景執行**只於目標視窗內擷取畫面、點擊、拖曳及輸入按鍵，即使被其他視窗遮擋亦可運行。部分遊戲（例如不少 DirectX 遊戲）不接受背景輸入；程式視窗不可最小化。
-- **Administrator detection**: if the target program runs as Administrator, MultiTool offers to restart itself as Administrator (otherwise Windows blocks the input).
-  **管理員權限偵測**：如目標程式以系統管理員權限執行，MultiTool 會提示以系統管理員身分重新啟動（否則 Windows 會阻擋輸入）。
+- **Administrator detection**: if the target program runs as Administrator, Rabi Toolkit offers to restart itself as Administrator (otherwise Windows blocks the input).
+  **管理員權限偵測**：如目標程式以系統管理員權限執行，Rabi Toolkit 會提示以系統管理員身分重新啟動（否則 Windows 會阻擋輸入）。
 - **Script list**: each script has its own **▶ Start / ■ Stop** button and a **run count** (once, N times or forever). Running scripts get a green frame and show their current round and step.
   **腳本列表**：每個腳本有獨立的 **▶ 開始／■ 停止** 按鈕及**運行次數**（一次、N 次或持續運行）。運行中的腳本會以綠色外框標示，並顯示目前輪數及步驟。
 - **Monitor mode**: click **📺 Monitor mode** to see a live view of each script's target program (only scripts with a target window whose program is open). Tick scripts and start them together; each tile also has its own Start / Stop and shows the current step. Double-click a view to switch to that program. Views use Windows' DWM thumbnails (drawn by the GPU, no screenshots). Once scripts are running, ticked / running scripts move to the front and idle tiles stop showing their view to save resources. Views are only loaded while monitor mode is open.
@@ -80,19 +83,19 @@ This repository only hosts release files; the source code is private.
   **編輯**：右鍵步驟可複製／剪下／貼上（循環、IF 及支線會連同其內容一併複製），或在上方／下方插入新步驟。右下角 **↶ 復原** 可還原上一次改動。循環及同時運行可摺疊，捲動時頂部列保持顯示。
 - **Run speed** (0.5x – 3.0x) on the preview page scales delays, hold times, check intervals and countdowns; it can be changed while the script is running.
   預覽頁的**運行速度**（0.5x – 3.0x）會按倍率調整延遲、按住時間、檢查間隔及倒數，運行中亦可即時更改。
-- **⏰ Schedule / notify** (top of the editor): start a script **daily at a set time** on chosen weekdays, **start it when MultiTool opens**, and get a **notification when it finishes or fails** (Windows + Discord). The same settings are on the **⏰** button of each script in the list, which also shows the schedule and the next start date and time.
-  **⏰ 定時／通知**（修改頁頂部）：可設定**每日指定時間**（可揀星期幾）自動開始、**開啟 MultiTool 時自動開始**，以及**完成或出錯時通知**（Windows + Discord）。腳本列表每個腳本的 **⏰** 按鈕亦可設定，並會顯示定時及下次開始的日期和時間。
+- **⏰ Schedule / notify** (top of the editor): start a script **daily at a set time** on chosen weekdays, **start it when Rabi Toolkit opens**, and get a **notification when it finishes or fails** (Windows + Discord). The same settings are on the **⏰** button of each script in the list, which also shows the schedule and the next start date and time.
+  **⏰ 定時／通知**（修改頁頂部）：可設定**每日指定時間**（可揀星期幾）自動開始、**開啟 Rabi Toolkit 時自動開始**，以及**完成或出錯時通知**（Windows + Discord）。腳本列表每個腳本的 **⏰** 按鈕亦可設定，並會顯示定時及下次開始的日期和時間。
 - Scripts are validated before running (missing images, unset keys, empty loops, etc.).
   執行前會自動檢查腳本（例如缺少圖片、未設定按鍵、空白循環等）。
-- **Auto update** checks GitHub Releases on startup and, when a new version is out, downloads it, replaces the program and restarts automatically — no prompt. If it fails (e.g. offline), MultiTool keeps working and tries again next launch.
+- **Auto update** checks GitHub Releases on startup and, when a new version is out, downloads it, replaces the program and restarts automatically — no prompt. If it fails (e.g. offline), Rabi Toolkit keeps working and tries again next launch.
   **自動更新**：啟動時檢查 GitHub Releases，有新版本會自動下載、替換程式並重新開啟，無須確認。更新失敗（例如沒有網絡）時仍可照常使用，下次開啟時再試。
 
 **Script library 腳本庫** — share scripts peer-to-peer, no server / 點對點分享腳本，無須伺服器
 
 - Open it with **Script library →** at the bottom-right of **My Scripts**.
   於**我的腳本**右下角按 **腳本庫 →** 開啟。
-- Search and download scripts shared by users who currently have MultiTool open; files come directly from their PC. If they are offline or unreachable, the download fails.
-  搜尋及下載目前開啟 MultiTool 的用戶所公開的腳本，檔案直接從對方電腦傳送；對方離線或無法連線則無法下載。
+- Search and download scripts shared by users who currently have Rabi Toolkit open; files come directly from their PC. If they are offline or unreachable, the download fails.
+  搜尋及下載目前開啟 Rabi Toolkit 的用戶所公開的腳本，檔案直接從對方電腦傳送；對方離線或無法連線則無法下載。
 - Share your own: turn on sharing in **Script library → Sharing settings**, then right-click a script → **Share to library**. Your IP address is visible to other users while sharing; window handles, hotkeys and your user folder path are not shared.
   公開自己的腳本：於 **腳本庫 → 分享設定** 開啟分享，再於腳本右鍵選擇 **公開到腳本庫**。分享期間你的 IP 地址會被其他用戶看到；視窗、快捷鍵及用戶資料夾路徑不會被分享。
 - Before adding a downloaded script, its system actions and typed text are listed for you to confirm. Downloaded scripts never start automatically.
@@ -132,16 +135,20 @@ This repository only hosts release files; the source code is private.
   內置程式碼編輯器（CodeMirror），設有**儲存**、**試行**（右邊即時預覽）、記錄區及 API 說明。
 - **AI write**: chat with your AI, which asks about anything unclear, then writes or changes the plugin; apply or undo with one click.
   **AI 幫我寫**：與你的 AI 對話，它會先問清楚不明確的地方，再編寫或修改插件，可一鍵套用或復原。
-- Safety: each plugin only reaches the websites listed in its manifest, permissions are shown and must be allowed before it runs, and it can't touch other files or run programs.
-  安全：插件只可連接 manifest 內列明的網站，運行前會列出權限並須同意，亦無法存取其他檔案或執行程式。
-- **Add to sidebar**: a plugin gets its own sidebar item and runs whenever MultiTool is open. Plugins follow the light / dark theme and can be exported / imported as `.mtplugin` files.
-  **加到工具欄**：插件在左側工具欄有自己的一格，開啟 MultiTool 時便會運行。插件會跟隨日光／深色主題，並可匯出／匯入為 `.mtplugin` 檔。
+- Safety: each plugin only reaches the websites listed in its manifest, permissions are shown and must be allowed before it runs, and it can't touch other files or run programs (unless it has the exec permission below).
+  安全：插件只可連接 manifest 內列明的網站，運行前會列出權限並須同意，亦無法存取其他檔案或執行程式（取得下述 exec 權限者除外）。
+- With the **exec** permission (shown as a warning), a plugin can download programs into its own folder and run them, use the shared FFmpeg, and save to folders you pick (`mt.download`, `mt.exec`, `mt.ffmpeg`, `mt.file.pickFolder`). Nothing else on your computer can be run.
+  取得 **exec** 權限（會顯示警告）的插件可將程式下載到自己的資料夾並執行、使用共用的 FFmpeg，以及儲存到你選擇的資料夾（`mt.download`、`mt.exec`、`mt.ffmpeg`、`mt.file.pickFolder`）；電腦上其他程式一律不能執行。
+- `name` and `description` in `manifest.json` can be an object such as `{"zh-Hant": "股票", "en": "Stocks"}`; the one matching the interface language is shown.
+  `manifest.json` 的 `name` 及 `description` 可寫成 `{"zh-Hant": "股票", "en": "Stocks"}` 之類的物件，按介面語言顯示。
+- **Add to sidebar**: a plugin gets its own sidebar item and runs whenever Rabi Toolkit is open. Plugins follow the light / dark theme and can be exported / imported as `.mtplugin` files.
+  **加到工具欄**：插件在左側工具欄有自己的一格，開啟 Rabi Toolkit 時便會運行。插件會跟隨日光／深色主題，並可匯出／匯入為 `.mtplugin` 檔。
 - **New ▾** offers **New tool** (a page of its own, as above), **New plugin** and **Import**.
   **新增 ▾** 可選擇**新工具**（有自己的介面，即上述的工具）、**新插件**及**匯入**。
-- **Plugins** (`"type": "mod"`) have no page of their own: `mod.js` runs in the background and changes how MultiTool itself looks — **themes** with `mt.app.addTheme` (all colours, a background image across the whole window, a font file, card transparency; e.g. an anime theme), plus the sidebar, title bar, home page and settings page with `mt.ui.*` (override text, colours, fonts, sizes or images, hide elements, add buttons / pictures / HTML panels, listen for clicks or page changes). Elements are picked with CSS-like selectors (`@sidebar Label[key="多功能工具"]`); **🔍 Pick element** copies the selector of whatever you Ctrl + click. Existing tools' pages and windows can't be changed — write a new tool for new features.
-  **插件**（`"type": "mod"`）沒有自己的介面：`mod.js` 在背景運行，修改 MultiTool 本身的外觀——以 `mt.app.addTheme` 加入**主題**（全部顏色、鋪滿整個視窗的背景圖、字型檔、卡片透明度，例如動漫主題），以及用 `mt.ui.*` 修改側欄、標題列、首頁及設定頁（override 文字、顏色、字型、大小或圖片、隱藏元件、加入按鈕／圖片／HTML 面板，以及監聽點擊或切換頁面）。元件以類似 CSS 的 selector 選擇（`@sidebar Label[key="多功能工具"]`）；**🔍 選擇元件**會複製你 Ctrl + 按下的元件的 selector。現有工具的頁面及視窗不可修改——如需新功能，請編寫新工具。
-- Plugin themes appear in the **Theme** menu at the bottom left of the sidebar (Light / Dark / plugin themes); choosing one restarts MultiTool. `mt.ui` changes are restored as soon as a plugin is turned off or reloaded, and also apply to elements created later. When several plugins change the same thing, the later one in the Workshop order wins (↑ / ↓ to reorder). Plugins must be turned on (**⏻ Turn on**) and need the "change MultiTool's look" permission; password boxes can't be read or changed.
-  插件主題會出現在左側欄底部的**主題**選單（日光／夜間／插件主題），選擇後會重新啟動。`mt.ui` 的修改在插件停用或重新載入時會即時還原，之後才建立的元件亦會自動套用。多個插件修改同一樣東西時，按工作坊的次序，排後面的會蓋過前面的（可按 ↑／↓ 調整）。插件須**⏻ 啟用**並同意「修改 MultiTool 的外觀」權限；密碼欄不能讀取或修改。
+- **Plugins** (`"type": "mod"`) have no page of their own: `mod.js` runs in the background and changes how Rabi Toolkit itself looks — **themes** with `mt.app.addTheme` (all colours, a background image across the whole window, a font file, card transparency; e.g. an anime theme), plus the sidebar, title bar, home page and settings page with `mt.ui.*` (override text, colours, fonts, sizes or images, hide elements, add buttons / pictures / HTML panels, listen for clicks or page changes). Elements are picked with CSS-like selectors (`@sidebar Label#themeMenu`); **🔍 Pick element** copies the selector of whatever you Ctrl + click. Existing tools' pages and windows can't be changed — write a new tool for new features.
+  **插件**（`"type": "mod"`）沒有自己的介面：`mod.js` 在背景運行，修改 Rabi Toolkit 本身的外觀——以 `mt.app.addTheme` 加入**主題**（全部顏色、鋪滿整個視窗的背景圖、字型檔、卡片透明度，例如動漫主題），以及用 `mt.ui.*` 修改側欄、標題列、首頁及設定頁（override 文字、顏色、字型、大小或圖片、隱藏元件、加入按鈕／圖片／HTML 面板，以及監聽點擊或切換頁面）。元件以類似 CSS 的 selector 選擇（`@sidebar Label[key="拉比工具箱"]`）；**🔍 選擇元件**會複製你 Ctrl + 按下的元件的 selector。現有工具的頁面及視窗不可修改——如需新功能，請編寫新工具。
+- Plugin themes appear in the **Theme** menu at the bottom left of the sidebar (Light / Dark / plugin themes); choosing one restarts Rabi Toolkit. `mt.ui` changes are restored as soon as a plugin is turned off or reloaded, and also apply to elements created later. When several plugins change the same thing, the later one in the Workshop order wins (↑ / ↓ to reorder). Plugins must be turned on (**⏻ Turn on**) and need the "change Rabi Toolkit's look" permission; password boxes can't be read or changed.
+  插件主題會出現在左側欄底部的**主題**選單（日光／夜間／插件主題），選擇後會重新啟動。`mt.ui` 的修改在插件停用或重新載入時會即時還原，之後才建立的元件亦會自動套用。多個插件修改同一樣東西時，按工作坊的次序，排後面的會蓋過前面的（可按 ↑／↓ 調整）。插件須**⏻ 啟用**並同意「修改 Rabi Toolkit 的外觀」權限；密碼欄不能讀取或修改。
 
 **Screen Recorder 螢幕錄影** — install it from the Tool library / 於工具庫安裝
 
@@ -176,10 +183,10 @@ This repository only hosts release files; the source code is private.
   **主影片位置及大小**：在預覽畫面點選主影片，可拖曳移動，或拖曳四角／滾輪調整大小；亦可在右邊設定橫向、直向位置及大小。
 - **Multiple tracks of every kind** — click “+” next to a track name to add text, video or audio tracks (drag a track name to reorder); items on different tracks can overlap (e.g. background music + sound effects), drag up / down to change track. **Video 2 and above = overlays (picture-in-picture / images)**. Clips snap to each other's edges, Shift + click selects several clips, and **Merge** joins adjacent clips. **Detach audio** from a video clip onto an audio track. The time display also shows the current / total frame.
   **每種軌都可以加多條**——按軌名旁的「+」新增文字、影片或音軌（拖曳軌名可調整次序），不同軌可以重疊（例如背景音樂＋音效），上下拖曳可換軌；**影片 2 軌以上＝疊加（子母畫面／圖片）**。拖曳時會吸附其他片段頭尾；Shift + 左鍵可多選，**合併**可把相連片段合成一段。可把影片的聲音**分離音軌**到音訊軌。時間旁亦顯示目前幀數／總幀數。
-- **Open with**: right-click a video or photo in File Explorer → Open with → Video Editor (MultiTool) opens it in a new project (registered for the current user only, removed when the tool is uninstalled).
-  **開啟檔案**：在檔案總管右鍵影片或相片 →「開啟檔案」→「影片剪輯 (MultiTool)」，會開新專案並加入檔案（只登記目前使用者，移除工具時會清除）。
-- **Edit with MultiTool**: right-click a video or photo → **Edit with MultiTool** (on Windows 11, under "Show more options"); several selected files go into one project.
-  **使用 MultiTool 編輯**：右鍵影片或相片 →「使用 MultiTool 編輯」（Windows 11 位於「顯示更多選項」），多選的檔案會放入同一個專案。
+- **Open with**: right-click a video or photo in File Explorer → Open with → Video Editor (Rabi Toolkit) opens it in a new project (registered for the current user only, removed when the tool is uninstalled).
+  **開啟檔案**：在檔案總管右鍵影片或相片 →「開啟檔案」→「影片剪輯 (Rabi Toolkit)」，會開新專案並加入檔案（只登記目前使用者，移除工具時會清除）。
+- **Edit with Rabi Toolkit**: right-click a video or photo → **Edit with Rabi Toolkit** (on Windows 11, under "Show more options"); several selected files go into one project.
+  **使用 Rabi Toolkit 編輯**：右鍵影片或相片 →「使用 Rabi Toolkit 編輯」（Windows 11 位於「顯示更多選項」），多選的檔案會放入同一個專案。
 - **Export**: choose whether the folder opens after the export finishes (remembered).
   **匯出**：可選擇匯出完成後是否打開資料夾（會被記住）。
 - **Fade in / out with a colour** at the start and end of each clip, for smooth joins between clips.
@@ -191,8 +198,8 @@ This repository only hosts release files; the source code is private.
 
 - Keeps the last 15 s – 5 min of the screen (with system audio / microphone) and saves it as MP4 only when you press the hotkey, like ShadowPlay. Nothing is saved otherwise.
   背景保留最近 15 秒至 5 分鐘的畫面（可連電腦聲音／咪高峰），按快捷鍵才儲存為 MP4，類似 ShadowPlay；未按則不會儲存任何內容。
-- Choose screen, FPS, resolution, quality, audio volume and cursor; can start automatically with MultiTool.
-  可選擇螢幕、FPS、解像度、品質、音量及滑鼠游標；可於開啟 MultiTool 時自動開始。
+- Choose screen, FPS, resolution, quality, audio volume and cursor; can start automatically with Rabi Toolkit.
+  可選擇螢幕、FPS、解像度、品質、音量及滑鼠游標；可於開啟 Rabi Toolkit 時自動開始。
 
 **Key Remap 遊戲改鍵** — turn one key into another / 將一個按鍵變成另一個按鍵
 
@@ -221,10 +228,15 @@ This repository only hosts release files; the source code is private.
 - **Documents**: convert between Excel (.xlsx), CSV, TSV and JSON without Office. Each sheet becomes its own file, or merge several files into one workbook. CSV output in UTF-8 with BOM (opens correctly in Excel), UTF-8, Big5 or GBK; old Big5 CSVs are detected automatically. Old `.xls` is not supported.
   **文件**：Excel（.xlsx）、CSV、TSV、JSON 互相轉換，無須安裝 Office。每張工作表輸出一個檔案，或將多個檔案合併為一個活頁簿。CSV 可輸出 UTF-8（附 BOM，Excel 可正常顯示中文）、UTF-8、Big5 或 GBK；自動辨認舊 Big5 CSV。不支援舊版 `.xls`。
 
-**Video Downloader 影片下載** — uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) / 使用 yt-dlp
+**Video Downloader 影片下載** — now a free Workshop plugin / 現為免費工作坊插件
 
-- Paste a link from YouTube, Bilibili, Twitch, TikTok, X, Vimeo, SoundCloud and 1000+ other sites and save it as MP3 or MP4; playlists supported. yt-dlp and FFmpeg are downloaded on install.
-  貼上 YouTube、Bilibili、Twitch、TikTok、X、Vimeo、SoundCloud 等 1000 多個網站的連結，儲存為 MP3 或 MP4，支援播放清單。安裝時下載 yt-dlp 及 FFmpeg。
+- Import `video-download.mtplugin` (attached to each release) in Workshop. Paste a link from YouTube, Bilibili, Twitch, TikTok, X, Vimeo, SoundCloud and 1000+ other sites and save it as MP3 or MP4; playlists supported. yt-dlp ([Unlicense](https://github.com/yt-dlp/yt-dlp)) and FFmpeg are downloaded on first use. Only download content you have the right to use.
+  於工作坊匯入 `video-download.mtplugin`（每個版本均有附上）。貼上 YouTube、Bilibili、Twitch、TikTok、X、Vimeo、SoundCloud 等 1000 多個網站的連結，儲存為 MP3 或 MP4，支援播放清單。首次使用時下載 yt-dlp 及 FFmpeg。只下載你有權使用的內容。
+
+**Stocks 股票** — free Workshop plugin / 免費工作坊插件
+
+- Import `stocks.mtplugin`. US, Hong Kong and Canadian stocks and crypto from Yahoo Finance (no sign-up, may be delayed): watchlist grouped by market with ★ favourites, popular lists, area / line / candlestick / OHLC charts with MA20 / MA50 and volume (scroll to zoom, drag to pan), gain / loss from your buy price, and price / daily-move alerts. For reference only, not investment advice.
+  匯入 `stocks.mtplugin`。資料來自 Yahoo Finance（毋須註冊，可能有延遲），涵蓋美股、港股、加股及加密貨幣：按市場分組的自選股及 ★ 標記、熱門股票、面積／線／K 線／美國線走勢圖，附 MA20／MA50 及成交量（滾輪縮放、拖動移動），按買入價計算盈虧，以及到價／單日升跌提醒。只供參考，並非投資建議。
 
 **Performance Monitor 效能監控** — three tabs: Performance, Ping and Game Mode / 分「效能」、「Ping 監看」及「遊戲模式」三個分頁
 
@@ -252,17 +264,24 @@ This repository only hosts release files; the source code is private.
 - FFmpeg, qpdf and untrunc are downloaded only when a file needs them, after asking.
   FFmpeg、qpdf 及 untrunc 只會在需要時經詢問後下載。
 
+**NAS Manager NAS 管理** — for Synology NAS, install it from the Tool library / 適用於 Synology NAS，於工具庫安裝
+
+- Browse your NAS like Google Drive (grid or list view, remembered): drag-and-drop upload, download, new folder, rename, delete and share links. Shared folders are the top level.
+  以類似 Google Drive 的方式瀏覽 NAS（格狀或清單檢視，會記住選擇）：拖放上載、下載、新增資料夾、改名、刪除及建立分享連結；最頂層為共用資料夾。
+- System status (CPU, RAM, disks), Wake-on-LAN, restart and shut down. Supports two-step verification and self-signed HTTPS certificates (you confirm the certificate once). Passwords are encrypted with Windows DPAPI; a NAS that connected before is reconnected automatically when Rabi Toolkit starts.
+  系統狀態（CPU、RAM、硬碟）、遙距開機（Wake-on-LAN）、重新啟動及關機。支援兩步驗證及自簽 HTTPS 證書（首次確認一次）。密碼以 Windows DPAPI 加密；曾成功連線的 NAS 會在開啟 Rabi Toolkit 時自動連線。
+
 **Disk Space & Health 磁碟空間及健康**
 
-- Used / free space for every drive, and drive health (status, temperature, SSD life used, power-on hours, read / write errors) from Windows' built-in storage data. Temperature, wear and hours need MultiTool to run as Administrator.
-  顯示每個磁碟的已用／剩餘空間，以及 Windows 內置存放裝置資料中的硬碟健康（狀態、溫度、SSD 已用壽命、開機時數、讀寫錯誤）。溫度、損耗及開機時數須以系統管理員身分執行 MultiTool。
+- Used / free space for every drive, and drive health (status, temperature, SSD life used, power-on hours, read / write errors) from Windows' built-in storage data. Temperature, wear and hours need Rabi Toolkit to run as Administrator.
+  顯示每個磁碟的已用／剩餘空間，以及 Windows 內置存放裝置資料中的硬碟健康（狀態、溫度、SSD 已用壽命、開機時數、讀寫錯誤）。溫度、損耗及開機時數須以系統管理員身分執行 Rabi Toolkit。
 - **Space analysis**: scan a drive or folder and browse it as a treemap; the 30 largest files (100 MB+) are listed. Right-click to open in Explorer or move to the Recycle Bin (with confirmation).
   **空間分析**：掃描磁碟或資料夾並以方格圖瀏覽，列出最大的 30 個檔案（100 MB 以上）；右鍵可於檔案總管開啟或移至資源回收筒（會先確認）。
 
 **Remote Desktop (beta) 遠端桌面（測試版）** — built in, no extra program / 內置，無須額外程式
 
-- Connect with an ID and password to control another PC running MultiTool, or let someone connect to yours. End-to-end encrypted (ECDH P-256 key exchange, password-authenticated, AES-GCM).
-  以 ID 及密碼連接另一部執行 MultiTool 的電腦並遠端控制，或讓別人連入你的電腦；全程端對端加密（ECDH P-256 交換金鑰、密碼驗證、AES-GCM）。
+- Connect with an ID and password to control another PC running Rabi Toolkit, or let someone connect to yours. End-to-end encrypted (ECDH P-256 key exchange, password-authenticated, AES-GCM).
+  以 ID 及密碼連接另一部執行 Rabi Toolkit 的電腦並遠端控制，或讓別人連入你的電腦；全程端對端加密（ECDH P-256 交換金鑰、密碼驗證、AES-GCM）。
 - There is no relay server: the host PC must be reachable directly (same LAN, or a public IP / UPnP). It does **not** work when the host is behind CGNAT, mobile data or most public Wi-Fi; a VPN such as Tailscale works around this.
   沒有中轉伺服器：被控電腦必須可直接連線（同一區網，或有公共 IP／UPnP）。被控電腦使用 CGNAT、流動數據或大部分公共 Wi-Fi 時**無法連線**，可改用 Tailscale 等 VPN。
 - Security: the fixed password needs at least 12 characters with letters and numbers; 5 wrong passwords lock connections for 30 minutes; you get a Windows notification when someone connects, and a red frame surrounds the screen while it is being controlled.
@@ -272,14 +291,14 @@ This repository only hosts release files; the source code is private.
 
 - One-click install / update with download progress: Palworld, Valheim, Enshrouded, 7 Days to Die, Satisfactory, V Rising, ARK: Survival Ascended, Rust, Project Zomboid, Counter-Strike 2, plus any number of custom Steam dedicated servers (App ID + executable + arguments).
   一鍵安裝／更新並顯示下載進度：Palworld、Valheim、Enshrouded、7 Days to Die、Satisfactory、V Rising、ARK: Survival Ascended、Rust、Project Zomboid、Counter-Strike 2，另可無限新增自訂 Steam 專用伺服器（App ID + 執行檔 + 參數）。
-- **Server info** tab: name, password, admin password, players, port and extra arguments (written into each game's config automatically), start with MultiTool, auto restart on crash, public / LAN IP, UPnP port opening, firewall exception, and scheduled backups with restore.
-  **伺服器資訊**分頁：伺服器名稱、密碼、管理員密碼、人數、端口及額外參數（自動寫入各遊戲設定檔）、開啟 MultiTool 時自動開始、當機自動重新啟動、對外／區網 IP、UPnP 開放端口、防火牆例外，以及定時備份與還原。
+- **Server info** tab: name, password, admin password, players, port and extra arguments (written into each game's config automatically), start with Rabi Toolkit, auto restart on crash, public / LAN IP, UPnP port opening, firewall exception, and scheduled backups with restore.
+  **伺服器資訊**分頁：伺服器名稱、密碼、管理員密碼、人數、端口及額外參數（自動寫入各遊戲設定檔）、開啟 Rabi Toolkit 時自動開始、當機自動重新啟動、對外／區網 IP、UPnP 開放端口、防火牆例外，以及定時備份與還原。
 - **Files** tab: quick folders, the game's config files with a built-in editor, and a file browser. **Console** tab: live output and commands.
   **檔案**分頁：常用資料夾、遊戲設定檔（內建編輯器）及檔案瀏覽；**控制台**分頁：即時輸出及輸入指令。
-- Servers stop gracefully (save first) when stopped or when MultiTool closes.
-  停止伺服器或關閉 MultiTool 時，會先讓伺服器儲存再停止。
-- UPnP ports are closed as soon as a server stops (and expire after 2 hours if MultiTool closes unexpectedly); starting a server without a password shows a warning.
-  伺服器停止後會立即關閉 UPnP 連接埠（MultiTool 意外關閉時亦會於 2 小時後自動失效）；未設定密碼便開啟伺服器時會顯示警告。
+- Servers stop gracefully (save first) when stopped or when Rabi Toolkit closes.
+  停止伺服器或關閉 Rabi Toolkit 時，會先讓伺服器儲存再停止。
+- UPnP ports are closed as soon as a server stops (and expire after 2 hours if Rabi Toolkit closes unexpectedly); starting a server without a password shows a warning.
+  伺服器停止後會立即關閉 UPnP 連接埠（Rabi Toolkit 意外關閉時亦會於 2 小時後自動失效）；未設定密碼便開啟伺服器時會顯示警告。
 - **AI helper**: with an AI signed in, a cloud button at the bottom-right can fill in server settings ("8 players, password abc123"), edit game config files inside the server folder only, and read the last lines of the console to explain errors. **Ask AI why** appears when a server fails.
   **AI 助手**：已登入 AI 時，右下角雲朵按鈕可代為填寫伺服器設定（例如「8 人遊玩，密碼 abc123」）、只於伺服器資料夾內修改遊戲設定檔，並查看控制台最後數行解釋錯誤；伺服器出問題時會出現**問 AI 原因**按鈕。
 
@@ -303,10 +322,10 @@ This repository only hosts release files; the source code is private.
 | Claude | [Claude Code](https://claude.com/claude-code) |
 | ChatGPT | [Codex CLI](https://github.com/openai/codex) |
 | Gemini | [Gemini CLI](https://github.com/google-gemini/gemini-cli) |
-| Local AI 本地 AI | Free, one-click download inside MultiTool (llama.cpp + Qwen3.5 2B / 4B) 免費，於 MultiTool 內一鍵下載（llama.cpp + Qwen3.5 2B／4B） |
+| Local AI 本地 AI | Free, one-click download inside Rabi Toolkit (llama.cpp + Qwen3.5 2B / 4B) 免費，於 Rabi Toolkit 內一鍵下載（llama.cpp + Qwen3.5 2B／4B） |
 
-- **Sign in / out** from the **Account** dialog; the top-right corner shows the current status (e.g. `已登入 Claude - Pro`). MultiTool never handles your account, password or token — sign-in is done by each official tool in your browser, and usage counts towards your own plan.
-  在「帳號」視窗中**登入／登出**，右上角顯示目前狀態（例如 `已登入 Claude - Pro`）。MultiTool 不會接觸你的帳戶、密碼或權杖——登入由各官方工具於瀏覽器完成，用量計入你自己的方案。
+- **Sign in / out** from the **Account** dialog; the top-right corner shows the current status (e.g. `已登入 Claude - Pro`). Rabi Toolkit never handles your account, password or token — sign-in is done by each official tool in your browser, and usage counts towards your own plan.
+  在「帳號」視窗中**登入／登出**，右上角顯示目前狀態（例如 `已登入 Claude - Pro`）。Rabi Toolkit 不會接觸你的帳戶、密碼或權杖——登入由各官方工具於瀏覽器完成，用量計入你自己的方案。
 - **Chat history** is saved automatically (`data/ai/chats/`) and listed on the left; reopen a chat to continue it, or rename / delete it with a right-click.
   **對話紀錄**自動儲存（`data/ai/chats/`）並列於左側；重新開啟可繼續對話，右鍵可重新命名或刪除。
 - **Script AI helper**: while editing a script, click the cloud button at the bottom-right to describe what you want. The AI rewrites the current script, and you can **apply** or **undo** the result. It cannot create screenshots or guess screen positions — it leaves those for you to fill in and lists them after applying.
@@ -335,9 +354,23 @@ This repository only hosts release files; the source code is private.
 
 ## Changelog 更新紀錄
 
+### v0.2.7
+- **Changed: New name** — MultiTool is now **Rabi Toolkit 拉比工具箱**, with a new icon. New downloads are `RabiToolkit.exe`; if you are updated automatically, your existing file name and shortcuts keep working.
+  **變更：新名稱**——MultiTool 改名為 **Rabi Toolkit 拉比工具箱**，並換上新圖示。新下載的執行檔為 `RabiToolkit.exe`；自動更新的用戶會沿用原有檔名，捷徑不受影響。
+- **New: NAS Manager** (Tool library) — connect to your Synology NAS and browse it like Google Drive: drag-and-drop upload, download, rename, delete and share links, see CPU / RAM / disk status, and wake, restart or shut it down. Supports two-step verification and reconnects automatically when Rabi Toolkit starts.
+  **新增：NAS 管理**（工具庫）——連接你的 Synology NAS，以類似 Google Drive 的方式瀏覽：拖放上載、下載、改名、刪除及建立分享連結，查看 CPU／RAM／硬碟狀態，並可遙距開機、重新啟動及關機。支援兩步驗證，開啟 Rabi Toolkit 時會自動連線。
+- **Changed: Video Downloader is now a Workshop plugin** — it is no longer built into Rabi Toolkit. Download `video-download.mtplugin` from this release and import it in Workshop (**+ New ▾ → Import**). It works as before and downloads yt-dlp the first time you use it.
+  **變更：影片下載改為工作坊插件**——不再內置於 Rabi Toolkit。請於本版本下載 `video-download.mtplugin`，在工作坊按 **+ 新增 ▾ → 匯入**，用法與之前相同，首次使用時會下載 yt-dlp。
+- **New: Stocks plugin** — a free Workshop plugin (`stocks.mtplugin`) for US, Hong Kong and Canadian stocks and crypto: watchlist, candlestick charts, your gain / loss from a buy price, and price alerts. Data from Yahoo Finance, may be delayed; for reference only, not investment advice.
+  **新增：股票插件**——免費工作坊插件（`stocks.mtplugin`），可查看美股、港股、加股及加密貨幣：自選股、K 線圖、按買入價計算盈虧及到價提醒。數據來自 Yahoo Finance，可能有延遲，只供參考，並非投資建議。
+- **New: Workshop** — plugins can download files, run programs they downloaded (new "exec" permission, shown as a warning before you allow it), use the shared FFmpeg and save to folders you pick. A plugin's name and description can be written in several languages and follow the interface language. Background plugins in the sidebar start as soon as Rabi Toolkit opens.
+  **新增：工作坊**——插件可下載檔案、執行自己下載的程式（新增「exec」權限，同意前會顯示警告）、使用共用的 FFmpeg 及儲存到你選擇的資料夾。插件名稱及介紹可寫成多種語言，跟隨介面語言顯示。加到側欄的背景插件會在開啟 Rabi Toolkit 時自動運行。
+- **Fixed: Menus** — some submenus were hard to read in the dark theme.
+  **修正：選單**——部分子選單在深色主題下難以閱讀。
+
 ### v0.2.6
-- **New: Workshop plugins** — "+ New ▾" now offers New tool / New plugin / Import. Plugins change how MultiTool itself looks: themes (all colours, a background image across the window, a font, card transparency), plus the sidebar, title bar, home and settings pages. Existing tools can't be changed; the app name and version number are protected.
-  **新增：工作坊插件**——「+ 新增 ▾」可選新工具／新插件／匯入。插件可修改 MultiTool 本身的外觀：主題（全部顏色、鋪滿視窗的背景圖、字型、卡片透明度），以及側欄、標題列、首頁及設定頁。現有工具不可修改，程式名稱及版本號亦受保護。
+- **New: Workshop plugins** — "+ New ▾" now offers New tool / New plugin / Import. Plugins change how Rabi Toolkit itself looks: themes (all colours, a background image across the window, a font, card transparency), plus the sidebar, title bar, home and settings pages. Existing tools can't be changed; the app name and version number are protected.
+  **新增：工作坊插件**——「+ 新增 ▾」可選新工具／新插件／匯入。插件可修改 Rabi Toolkit 本身的外觀：主題（全部顏色、鋪滿視窗的背景圖、字型、卡片透明度），以及側欄、標題列、首頁及設定頁。現有工具不可修改，程式名稱及版本號亦受保護。
 - **New: Theme menu** — the bottom-left theme switch is now a menu with Light, Dark and themes added by plugins.
   **新增：主題選單**——左下角改為主題選單，可選日光、夜間及插件加入的主題。
 - **New: AI attachments** — send images and documents (PDF, Word, Excel, PowerPoint, text) together with your message in AI Assistant and the AI helpers (📎, drag and drop, or Ctrl+V).
@@ -352,8 +385,8 @@ This repository only hosts release files; the source code is private.
   **變更：版本號**——版本號改為 0.xxx 格式（此版本接續 v2.5.2），不影響自動更新。
 - **New: File Repair** (Tool library) — drop in videos, audio, photos, Office / ZIP files or PDFs that won't open and a repaired copy is saved next to them.
   **新增：檔案修復**（工具庫）——將無法開啟的影片、聲音、相片、Office／ZIP 檔或 PDF 拖入，即自動修復並另存一份於原檔旁。
-- **New: Video Editor** — "Edit with MultiTool" in the File Explorer right-click menu (Windows 11: under "Show more options").
-  **新增：影片剪輯**——檔案總管右鍵選單新增「使用 MultiTool 編輯」（Windows 11 位於「顯示更多選項」）。
+- **New: Video Editor** — "Edit with Rabi Toolkit" in the File Explorer right-click menu (Windows 11: under "Show more options").
+  **新增：影片剪輯**——檔案總管右鍵選單新增「使用 Rabi Toolkit 編輯」（Windows 11 位於「顯示更多選項」）。
 - **New: Video Editor** — a checkbox in the export window chooses whether the folder opens after exporting.
   **新增：影片剪輯**——匯出視窗新增選項，決定匯出完成後是否打開資料夾。
 - **Fixed: Interface** — long text in some languages was cut off; it now wraps or shrinks to fit.
@@ -392,8 +425,8 @@ This repository only hosts release files; the source code is private.
 ### v2.4.2
 - **Changed: Hotkeys** — the hotkey table was removed from Settings; every tool and script hotkey now works anywhere. Setting a hotkey that another tool or script already uses is refused with a message saying who uses it.
   **變更：快捷鍵**——設定頁的快捷鍵表已移除，所有工具及腳本的快捷鍵一律可在任何地方使用；設定已被其他工具或腳本使用的快捷鍵時會被拒絕，並提示由誰使用。
-- **Fixed:** script hotkeys could only stop, not start, when MultiTool was left on the My Scripts list in the background.
-  **修正：**MultiTool 停留在「我的腳本」清單並在背後時，腳本快捷鍵只能停止、不能開始。
+- **Fixed:** script hotkeys could only stop, not start, when Rabi Toolkit was left on the My Scripts list in the background.
+  **修正：**Rabi Toolkit 停留在「我的腳本」清單並在背後時，腳本快捷鍵只能停止、不能開始。
 - **Fixed:** background image search on emulators such as LDPlayer — background capture now tries several methods and avoids black screenshots.
   **修正：**雷電等模擬器的背景找圖——背景截圖會嘗試多種方法，避免截到全黑畫面。
 
@@ -418,8 +451,8 @@ This repository only hosts release files; the source code is private.
   **新增：滑鼠步驟可選「座標／找圖／IF 座標」**——點擊固定位置、找到的圖片中央，或 IF 找到的位置（圖片中央、顏色該點或文字範圍中央；只限 IF 內）。以「彈起」找圖時會自動選另一張相同的圖。
 - **Changed:** when a window is chosen, image search only looks inside that window; the position picker button is renamed to 位置.
   **變更：**選擇了視窗時，找圖只會在該視窗內搜尋；記錄座標的按鈕改名為「位置」。
-- **Fixed:** opening MultiTool twice no longer starts a second copy — the running one is brought to the front.
-  **修正：**重複開啟 MultiTool 不會再開多一個，會把已開啟的視窗帶到最前。
+- **Fixed:** opening Rabi Toolkit twice no longer starts a second copy — the running one is brought to the front.
+  **修正：**重複開啟 Rabi Toolkit 不會再開多一個，會把已開啟的視窗帶到最前。
 
 ### v2.3
 - **New: Text and number conditions** in My Scripts — an IF can check whether a screen area shows some text, or compare the number in it (e.g. drink a potion when HP is below 300).
@@ -428,8 +461,8 @@ This repository only hosts release files; the source code is private.
   **新增：「變數」步驟**——計數器及讀取畫面數字，配合**變數比較**條件（例如執行 50 次後停止）。
 - **New: Notify step** and **notify when finished / on error** — Windows notifications and Discord webhooks.
   **新增：「通知」步驟**及**完成／出錯時通知**——Windows 通知及 Discord webhook。
-- **New: Schedule** — start a script daily at a set time, or when MultiTool opens.
-  **新增：定時開始**——每日指定時間或開啟 MultiTool 時自動開始腳本。
+- **New: Schedule** — start a script daily at a set time, or when Rabi Toolkit opens.
+  **新增：定時開始**——每日指定時間或開啟 Rabi Toolkit 時自動開始腳本。
 - **New: Run script step** — run another script's steps inside this one.
   **新增：「行其他腳本」步驟**——於腳本內執行另一個腳本的步驟。
 - **New: Ping monitor** and **Game Mode** tabs in Performance Monitor (renamed from 效能監看 to 效能監控).
@@ -466,8 +499,8 @@ This repository only hosts release files; the source code is private.
   **修正：**安裝較多工具或視窗較矮時，側欄項目與主題／語言／開發者字樣重疊。項目現會自動縮小，必要時可用滑鼠滾輪捲動。
 
 ### v1.9.1 (Hotfix)
-- **Fixed:** in My Scripts, recording could not be stopped with **■ Stop recording** or F10 after MultiTool was minimized.
-  **修正：**我的腳本錄製時，MultiTool 縮細後無法以 **■ 停止錄製** 或 F10 停止錄製。
+- **Fixed:** in My Scripts, recording could not be stopped with **■ Stop recording** or F10 after Rabi Toolkit was minimized.
+  **修正：**我的腳本錄製時，Rabi Toolkit 縮細後無法以 **■ 停止錄製** 或 F10 停止錄製。
 
 ### v1.9
 - **New: Video Downloader** — save links from YouTube, Bilibili, Twitch, TikTok and 1000+ sites as MP3 / MP4 (yt-dlp).
@@ -506,8 +539,8 @@ This repository only hosts release files; the source code is private.
   **新增：側欄排序**——拖曳或右鍵調整次序，並會記住。
 - **Changed:** the Script library moved into My Scripts (button at the bottom-right).
   **變更：**腳本庫移至我的腳本內（右下角按鈕）。
-- **Changed:** script hotkeys now start their scripts from any other page or when MultiTool is minimized; on the My Scripts page only the previewed script can be started by hotkey.
-  **變更：**於其他頁面或 MultiTool 最小化時，可用快捷鍵開始任何腳本；在我的腳本頁內，只有預覽中的腳本可用快捷鍵開始。
+- **Changed:** script hotkeys now start their scripts from any other page or when Rabi Toolkit is minimized; on the My Scripts page only the previewed script can be started by hotkey.
+  **變更：**於其他頁面或 Rabi Toolkit 最小化時，可用快捷鍵開始任何腳本；在我的腳本頁內，只有預覽中的腳本可用快捷鍵開始。
 - Fixed: setting a hotkey immediately triggered it (e.g. started a recording).
   修正：設定快捷鍵時會即時觸發（例如開始錄影）。
 - Fixed: all hotkeys stopped working after setting one and switching to another page.
@@ -566,8 +599,8 @@ This repository only hosts release files; the source code is private.
   **新增：前景腳本亦可選擇目標視窗**——無須開啟背景執行亦可選擇視窗，開始前會自動切換至該視窗。
 - **New: Positions scale with the window size** — clicks and pixel checks follow the target window when it is resized.
   **新增：座標按視窗大小比例換算**——調整目標視窗大小後，點擊及顏色檢查位置會自動跟隨。
-- **New: Administrator detection** — offers to restart MultiTool as Administrator when the target program needs it.
-  **新增：管理員權限偵測**——目標程式需要時，提示以系統管理員身分重新啟動 MultiTool。
+- **New: Administrator detection** — offers to restart Rabi Toolkit as Administrator when the target program needs it.
+  **新增：管理員權限偵測**——目標程式需要時，提示以系統管理員身分重新啟動 Rabi Toolkit。
 - Only one foreground script can run at a time; starting a second one shows a reminder.
   同一時間只可運行一個前景腳本；嘗試開始第二個時會顯示提醒。
 - The stop-all hotkey now toggles: start the ticked scripts, or stop all.
@@ -576,8 +609,8 @@ This repository only hosts release files; the source code is private.
   前景滑鼠輸入改用真實滑鼠事件，更多遊戲能夠接收點擊。
 - Fixed: when a loop's time limit ends, inner loops and delays now stop immediately, and keys pressed down inside the loop are released.
   修正：循環時限結束時，內層循環及延遲會即時停止，循環內按下的按鍵會自動彈起。
-- Fixed: switching back to MultiTool no longer puts the hotkey box into recording mode.
-  修正：切換回 MultiTool 時不會再自動進入快捷鍵設定。
+- Fixed: switching back to Rabi Toolkit no longer puts the hotkey box into recording mode.
+  修正：切換回 Rabi Toolkit 時不會再自動進入快捷鍵設定。
 - Fixed: the mouse wheel no longer changes number boxes; it scrolls the page instead.
   修正：滑鼠滾輪不會再改動數字欄，改為捲動頁面。
 - The script AI helper understands all new steps and options.
@@ -616,8 +649,8 @@ This repository only hosts release files; the source code is private.
   「等待」步驟改名為**延遲**；延遲及按住時間改以毫秒（ms）設定。
 - AI Assistant: the top-right "Sign in" button is now **Account** (shows sign-in status and plan, e.g. `已登入 Claude - Pro`); settings button renamed **Voice settings**.
   AI 助手：右上角「登入」改為**帳號**（顯示登入狀態及方案，例如 `已登入 Claude - Pro`）；設定按鈕改名為**語音設定**。
-- Opening apps / websites now works when MultiTool runs as Administrator.
-  以系統管理員身分運行 MultiTool 時亦可正常開啟程式及網頁。
+- Opening apps / websites now works when Rabi Toolkit runs as Administrator.
+  以系統管理員身分運行 Rabi Toolkit 時亦可正常開啟程式及網頁。
 
 ### v1.1
 - **New: AI Assistant page** — chat with Claude, ChatGPT or Gemini through your own installed CLI tool, with sign-in / sign-out, status display and saved chat history.
@@ -644,10 +677,11 @@ Downloaded by the user on demand, not bundled in the executable / 由用戶按�
 
 - [whisper.cpp](https://github.com/ggml-org/whisper.cpp) and [OpenAI Whisper](https://github.com/openai/whisper) models — MIT License
 - [llama.cpp](https://github.com/ggml-org/llama.cpp) — MIT License
-- [FFmpeg](https://ffmpeg.org/) (essentials build from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/)) — GPL, used by the recorder, Instant Replay, Video Editor, Converter, Video Downloader and File Repair as a separate program / GPL 授權，螢幕錄影、精彩重播、影片剪輯、格式轉換、影片下載及檔案修復以獨立程式方式調用
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — Unlicense, downloaded by Video Downloader / 由影片下載工具下載
+- [FFmpeg](https://ffmpeg.org/) (essentials build from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/)) — GPL, used by the recorder, Instant Replay, Video Editor, Converter, File Repair and the Video Downloader plugin as a separate program / GPL 授權，螢幕錄影、精彩重播、影片剪輯、格式轉換、檔案修復及影片下載插件以獨立程式方式調用
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — Unlicense, downloaded by the Video Downloader Workshop plugin / 由影片下載工作坊插件下載
 - [qpdf](https://github.com/qpdf/qpdf) — Apache License 2.0, downloaded by File Repair for PDFs / 由檔案修復下載，用於 PDF
 - [untrunc](https://github.com/anthwlock/untrunc) — GPL-2.0, downloaded by File Repair for MP4 / MOV without an index, run as a separate program / 由檔案修復下載，用於遺失索引的 MP4／MOV，以獨立程式方式調用
+- [Yahoo Finance](https://finance.yahoo.com/) — public quote data used by the Stocks Workshop plugin, subject to Yahoo's terms / 股票工作坊插件使用的公開報價數據，受 Yahoo 條款約束
 - [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD) — Valve's command-line Steam client, downloaded by Game Servers; dedicated servers are downloaded from Steam under each game's own terms / Valve 官方命令列 Steam 用戶端，由遊戲伺服器下載；各專用伺服器從 Steam 下載，受各遊戲條款約束
 - [Qwen3.5](https://huggingface.co/Qwen) models (GGUF by [unsloth](https://huggingface.co/unsloth)) — see each model's license / 請參閱各模型的授權
 
