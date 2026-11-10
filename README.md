@@ -25,6 +25,9 @@ Interface languages / 介面語言：Traditional Chinese, Simplified Chinese, En
 Optional free Workshop plugins (`video-download.mtplugin`, `stocks.mtplugin`) are attached to each release: open **Workshop → + New ▾ → Import** to add them.
 每個版本亦附上免費工作坊插件（`video-download.mtplugin`、`stocks.mtplugin`），可於**工作坊 → + 新增 ▾ → 匯入**加入。
 
+An internet connection is needed each time Rabi Toolkit starts: it checks for updates and closes if it can't update.
+每次開啟 Rabi Toolkit 時均須連接網絡：程式會檢查更新，無法更新時會關閉。
+
 Keep `RabiToolkit.exe` and the `data` folder together — your scripts, screenshots and settings are stored in `data`.
 `RabiToolkit.exe` 須與 `data` 資料夾放在一起，你的腳本、截圖及設定都儲存在 `data` 內。
 
@@ -353,6 +356,10 @@ This repository only hosts release files; the source code is private.
 ---
 
 ## Changelog 更新紀錄
+
+### v0.2.8
+- **Changed: Updates are required** — Rabi Toolkit checks for updates every time it starts and must be on the latest version to run. If it can't reach GitHub (e.g. no internet), can't find the update server, or the update fails, it shows a message and closes. An internet connection is needed each time you open it.
+  **變更：必須更新**——Rabi Toolkit 每次開啟時都會檢查更新，必須為最新版本才可使用。若無法連接 GitHub（例如沒有網絡）、找不到更新伺服器或更新失敗，會顯示訊息並關閉。每次開啟時均須連接網絡。
 
 ### v0.2.7
 - **Changed: New name** — MultiTool is now **Rabi Toolkit 拉比工具箱**, with a new icon. New downloads are `RabiToolkit.exe`; if you are updated automatically, your existing file name and shortcuts keep working.
